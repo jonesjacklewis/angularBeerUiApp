@@ -12,11 +12,13 @@ import { BeersService } from '../services/beers.service';
 export class BeersComponent implements OnInit {
 
   constructor(private beersService: BeersService) {
+    this.beersService.getBeer(81).subscribe();
     this.setCurrentPage();
     this.beers = beersService.getBeers(this.currentPage);
   }
 
   ngOnInit(): void {
+
     this.beers.subscribe(next => this.beersList = next);
   }
 

@@ -13,12 +13,15 @@ import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatIconModule} from '@angular/material/icon';
 import {MatInputModule} from '@angular/material/input';
 import { FormsModule } from '@angular/forms';
-
+import {MatDialogModule} from '@angular/material/dialog';
+import { BeerDetailsComponent } from './beer-details/beer-details.component';
+import {MatTableModule} from '@angular/material/table';
 @NgModule({
   declarations: [
     AppComponent,
     BeersComponent,
     BeerComponent,
+    BeerDetailsComponent,
   ],
   imports: [
     BrowserModule,
@@ -30,7 +33,9 @@ import { FormsModule } from '@angular/forms';
     MatFormFieldModule,
     MatIconModule,
     MatInputModule,
-    FormsModule
+    FormsModule,
+    MatDialogModule,
+    MatTableModule
   ],
   providers: [],
   bootstrap: [AppComponent]

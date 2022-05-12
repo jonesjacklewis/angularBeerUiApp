@@ -18,6 +18,7 @@ interface Malt {
 
 export interface Beer {
   abv: number,
+  id: number | undefined,
   ingredients: {
     hops: Hops[] | null | undefined,
     malt: Malt[] | null | undefined,
