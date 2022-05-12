@@ -1,4 +1,4 @@
-import { Component, ElementRef, Input, OnInit, } from '@angular/core';
+import { Component } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { BeersService } from '../services/beers.service';
 
@@ -7,7 +7,7 @@ import { BeersService } from '../services/beers.service';
   templateUrl: './beer-details.component.html',
   styleUrls: ['./beer-details.component.css']
 })
-export class BeerDetailsComponent implements OnInit {
+export class BeerDetailsComponent {
 
 
   constructor(private beersService: BeersService, public dialog: MatDialog) {
@@ -15,9 +15,6 @@ export class BeerDetailsComponent implements OnInit {
 
   beer = this.beersService.selectedBeer;
 
-  ngOnInit(): void {
-
-  }
 
   logger(item: any){
     console.log(item);
@@ -27,6 +24,11 @@ export class BeerDetailsComponent implements OnInit {
     this.beersService.getBeer(this.beer?.id !== undefined ? this.beer?.id : 0).subscribe(value => {
       this.beersService.selectedBeer = value;
       const dialogRef = this.dialog.open(templateRef);
+
+      dialogRef.afterClosed().subscribe({
+        error: err => console.error(err)
+      });
+
     });
   }
 

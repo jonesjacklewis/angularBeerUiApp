@@ -1,4 +1,4 @@
-mat-card{
+mat-card {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -19,11 +19,11 @@ mat-card{
 }
 
 
-mat-card-subtitle{
+mat-card-subtitle {
   color: #fff;
 }
 
-mat-card-subtitle:hover{
+mat-card-subtitle:hover {
   font-weight: bold;
   cursor: pointer;
 }

@@ -1,123 +1,123 @@
 <table>
+  <caption>Information around The Beer</caption>
+  <tr *ngIf="beer?.id">
+    <th>ID</th>
+    <td>{{beer?.id}}</td>
+  </tr>
 
-<tr *ngIf="beer?.id">
-  <th>ID</th>
-  <td>{{beer?.id}}</td>
-</tr>
+  <tr *ngIf="beer?.name">
+    <th>Name</th>
+    <td>{{beer?.name}}</td>
+  </tr>
 
-<tr *ngIf="beer?.name">
-  <th>Name</th>
-  <td>{{beer?.name}}</td>
-</tr>
+  <tr *ngIf="beer?.tagline">
+    <th>Tagline</th>
+    <td>{{beer?.tagline}}</td>
+  </tr>
 
-<tr *ngIf="beer?.tagline">
-  <th>Tagline</th>
-  <td>{{beer?.tagline}}</td>
-</tr>
+  <tr *ngIf="beer?.first_brewed">
+    <th>First Brewed</th>
+    <td>{{beer?.first_brewed}}</td>
+  </tr>
 
-<tr *ngIf="beer?.first_brewed">
-  <th>First Brewed</th>
-  <td>{{beer?.first_brewed}}</td>
-</tr>
+  <tr *ngIf="beer?.description">
+    <th>Description</th>
+    <td>{{beer?.description}}</td>
+  </tr>
 
-<tr *ngIf="beer?.description">
-  <th>Description</th>
-  <td>{{beer?.description}}</td>
-</tr>
+  <tr *ngIf="beer?.image_url">
+    <th>Image</th>
+    <td>
+      <img [src]="beer?.image_url" [alt]="beer?.image_url" (click)="viewDialog(imageTemplate)">
+    </td>
+  </tr>
 
-<tr *ngIf="beer?.image_url">
-  <th>Image</th>
-  <td>
-    <img [src]="beer?.image_url" [alt]="beer?.image_url" (click)="viewDialog(imageTemplate)">
-  </td>
-</tr>
+  <tr *ngIf="beer?.abv">
+    <th>ABV</th>
+    <td>{{beer?.abv}}</td>
+  </tr>
 
-<tr *ngIf="beer?.abv">
-  <th>ABV</th>
-  <td>{{beer?.abv}}</td>
-</tr>
+  <tr *ngIf="beer?.ibu">
+    <th>IBU</th>
+    <td>{{beer?.ibu}}</td>
+  </tr>
 
-<tr *ngIf="beer?.ibu">
-  <th>IBU</th>
-  <td>{{beer?.ibu}}</td>
-</tr>
+  <tr *ngIf="beer?.target_fg">
+    <th>Target FG</th>
+    <td>{{beer?.target_fg}}</td>
+  </tr>
 
-<tr *ngIf="beer?.target_fg">
-  <th>Target FG</th>
-  <td>{{beer?.target_fg}}</td>
-</tr>
+  <tr *ngIf="beer?.target_og">
+    <th>Target OG</th>
+    <td>{{beer?.target_og}}</td>
+  </tr>
 
-<tr *ngIf="beer?.target_og">
-  <th>Target OG</th>
-  <td>{{beer?.target_og}}</td>
-</tr>
+  <tr *ngIf="beer?.ebc">
+    <th>EBC</th>
+    <td>{{beer?.ebc}}</td>
+  </tr>
 
-<tr *ngIf="beer?.ebc">
-  <th>EBC</th>
-  <td>{{beer?.ebc}}</td>
-</tr>
+  <tr *ngIf="beer?.srm">
+    <th>SRM</th>
+    <td>{{beer?.srm}}</td>
+  </tr>
 
-<tr *ngIf="beer?.srm">
-  <th>SRM</th>
-  <td>{{beer?.srm}}</td>
-</tr>
+  <tr *ngIf="beer?.ph">
+    <th>pH</th>
+    <td>{{beer?.ph}}</td>
+  </tr>
 
-<tr *ngIf="beer?.ph">
-  <th>pH</th>
-  <td>{{beer?.ph}}</td>
-</tr>
+  <tr *ngIf="beer?.attenuation_level">
+    <th>Attenuation Level</th>
+    <td>{{beer?.attenuation_level}}</td>
+  </tr>
 
-<tr *ngIf="beer?.attenuation_level">
-  <th>Attenuation Level</th>
-  <td>{{beer?.attenuation_level}}</td>
-</tr>
+  <tr *ngIf="beer?.volume && beer?.volume?.value && beer?.volume?.unit">
+    <th>Volume ({{beer?.volume?.unit}})</th>
+    <td>{{beer?.volume?.value}}</td>
+  </tr>
 
-<tr *ngIf="beer?.volume && beer?.volume?.value && beer?.volume?.unit">
-  <th>Volume ({{beer?.volume?.unit}})</th>
-  <td>{{beer?.volume?.value}}</td>
-</tr>
+  <tr *ngIf="beer?.boil_volume && beer?.boil_volume?.value && beer?.boil_volume?.unit">
+    <th>Boil Volume ({{beer?.boil_volume?.unit}})</th>
+    <td>{{beer?.boil_volume?.value}}</td>
+  </tr>
 
-<tr *ngIf="beer?.boil_volume && beer?.boil_volume?.value && beer?.boil_volume?.unit">
-  <th>Boil Volume ({{beer?.boil_volume?.unit}})</th>
-  <td>{{beer?.boil_volume?.value}}</td>
-</tr>
+  <tr *ngIf="beer?.method">
+    <th>Method</th>
+    <td>
+      <button *ngIf="beer?.method?.mash_temp" (click)="viewDialog(mashTempTemplate)">Mash Temp</button>
+      <button *ngIf="beer?.method?.fermentation" (click)="viewDialog(fermentationTemplate)">Fermentation</button>
+      <button *ngIf="beer?.method?.twist" (click)="viewDialog(twistTemplate)">Twist</button>
+    </td>
+  </tr>
 
-<tr *ngIf="beer?.method">
-  <th>Method</th>
-  <td>
-    <button *ngIf="beer?.method?.mash_temp" (click)="viewDialog(mashTempTemplate)">Mash Temp</button>
-    <button *ngIf="beer?.method?.fermentation" (click)="viewDialog(fermentationTemplate)">Fermentation</button>
-    <button *ngIf="beer?.method?.twist" (click)="viewDialog(twistTemplate)">Twist</button>
-  </td>
-</tr>
+  <tr *ngIf="beer?.ingredients">
+    <th>Ingredients</th>
+    <td>
+      <button *ngIf="beer?.ingredients?.malt" (click)="viewDialog(maltTemplate)">Malt</button>
+      <button *ngIf="beer?.ingredients?.hops" (click)="viewDialog(hopsTemplate)">Hops</button>
+      <button *ngIf="beer?.ingredients?.yeast" (click)="viewDialog(yeastTemplate)">Yeast</button>
+    </td>
+  </tr>
 
-<tr *ngIf="beer?.ingredients">
-  <th>Ingredients</th>
-  <td>
-    <button *ngIf="beer?.ingredients?.malt" (click)="viewDialog(maltTemplate)">Malt</button>
-    <button *ngIf="beer?.ingredients?.hops" (click)="viewDialog(hopsTemplate)">Hops</button>
-    <button *ngIf="beer?.ingredients?.yeast" (click)="viewDialog(yeastTemplate)">Yeast</button>
-  </td>
-</tr>
+  <tr *ngIf="beer?.food_pairing">
+    <th>Food Pairings</th>
+    <td>
+      <ul>
+        <li *ngFor="let fp of beer?.food_pairing">{{fp}}</li>
+      </ul>
+    </td>
+  </tr>
 
-<tr *ngIf="beer?.food_pairing">
-  <th>Food Pairings</th>
-  <td>
-    <ul>
-      <li *ngFor="let fp of beer?.food_pairing">{{fp}}</li>
-    </ul>
-  </td>
-</tr>
+  <tr *ngIf="beer?.brewers_tips">
+    <th>Brewers Tips</th>
+    <td>{{beer?.brewers_tips}}</td>
+  </tr>
 
-<tr *ngIf="beer?.brewers_tips">
-  <th>Brewers Tips</th>
-  <td>{{beer?.brewers_tips}}</td>
-</tr>
-
-<tr *ngIf="beer?.contributed_by">
-  <th>Contributed By</th>
-  <td>{{beer?.contributed_by}}</td>
-</tr>
+  <tr *ngIf="beer?.contributed_by">
+    <th>Contributed By</th>
+    <td>{{beer?.contributed_by}}</td>
+  </tr>
 
 </table>
 
@@ -128,8 +128,9 @@
 <ng-template #mashTempTemplate>
   <h4>Mash Temp</h4>
   <table>
+    <caption>Information Around the Mash Temp</caption>
     <div *ngFor="let mt of beer?.method?.mash_temp; let i = index">
-      <tr >
+      <tr>
         <th>Temp ({{mt.temp.unit}}) [{{i + 1}}]</th>
         <td>{{mt.temp.value}}</td>
       </tr>
@@ -141,67 +142,71 @@
     </div>
 
   </table>
- </ng-template>
+</ng-template>
 
- <ng-template #fermentationTemplate>
-   <h4>Fermentation</h4>
-   <table>
-     <tr>
-       <th>Temperature ({{beer?.method?.fermentation?.temp?.unit}})</th>
-       <td>{{beer?.method?.fermentation?.temp?.value}}</td>
-     </tr>
-   </table>
- </ng-template>
+<ng-template #fermentationTemplate>
+  <h4>Fermentation</h4>
+  <table>
+    <caption>Information around The Fermentation</caption>
+    <tr>
+      <th>Temperature ({{beer?.method?.fermentation?.temp?.unit}})</th>
+      <td>{{beer?.method?.fermentation?.temp?.value}}</td>
+    </tr>
+  </table>
+</ng-template>
 
- <ng-template #twistTemplate>
-   <h4>Twist</h4>
-   <table>
-     <tr>
-       <th>Twist</th>
-       <td>{{beer?.method?.twist}}</td>
-     </tr>
-   </table>
- </ng-template>
+<ng-template #twistTemplate>
+  <h4>Twist</h4>
+  <table>
+    <caption>Information about The Twist</caption>
+    <tr>
+      <th>Twist</th>
+      <td>{{beer?.method?.twist}}</td>
+    </tr>
+  </table>
+</ng-template>
 
 
- <ng-template #maltTemplate>
-   <h4>Malt</h4>
-   <table>
-     <div *ngFor="let m of beer?.ingredients?.malt">
-       <tr>
-         <th>Name</th>
-         <td>{{m.name}}</td>
-       </tr>
-       <tr>
+<ng-template #maltTemplate>
+  <h4>Malt</h4>
+  <table>
+    <caption>Information about The Malt</caption>
+    <div *ngFor="let m of beer?.ingredients?.malt">
+      <tr>
+        <th>Name</th>
+        <td>{{m.name}}</td>
+      </tr>
+      <tr>
         <th>Amount ({{m.amount.unit}})</th>
-      <td>{{m.amount.value}}</td>
+        <td>{{m.amount.value}}</td>
       </tr>
       <hr>
-     </div>
-   </table>
- </ng-template>
+    </div>
+  </table>
+</ng-template>
 
- <ng-template #hopsTemplate>
+<ng-template #hopsTemplate>
   <h4>Hops</h4>
   <table>
+    <caption>Information about The Hops</caption>
     <div *ngFor="let h of beer?.ingredients?.hops">
       <tr>
         <th>Name</th>
         <td>{{h.name}}</td>
       </tr>
       <tr>
-       <th>Amount ({{h.amount.unit}})</th>
-     <td>{{h.amount.value}}</td>
-     </tr>
-     <tr>
-       <th>Add</th>
-       <td>{{h.add}}</td>
-     </tr>
-     <tr>
-       <th>Attribute</th>
-       <td>{{h.attribute}}</td>
-     </tr>
-     <hr>
+        <th>Amount ({{h.amount.unit}})</th>
+        <td>{{h.amount.value}}</td>
+      </tr>
+      <tr>
+        <th>Add</th>
+        <td>{{h.add}}</td>
+      </tr>
+      <tr>
+        <th>Attribute</th>
+        <td>{{h.attribute}}</td>
+      </tr>
+      <hr>
     </div>
   </table>
 </ng-template>
@@ -209,6 +214,7 @@
 <ng-template #yeastTemplate>
   <h4>Yeast</h4>
   <table>
+    <caption>Information about The Yeast</caption>
     <tr>
       <th>Yeast</th>
       <td>{{beer?.ingredients?.yeast}}</td>

@@ -13,7 +13,8 @@
 </div>
 
 <div class="beers">
-  <mat-paginator #paginator [length]="20" [pageSize]="1" [pageSizeOptions]="[1]" aria-label="Select page" (page)="setCurrentPage($event)" [disabled]="disablePagination">
+  <mat-paginator #paginator [length]="20" [pageSize]="1" [pageSizeOptions]="[1]" aria-label="Select page"
+    (page)="setCurrentPage($event)" [disabled]="disablePagination">
   </mat-paginator>
 
   <section class="grid">

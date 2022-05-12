@@ -16,10 +16,15 @@ export class BeerComponent {
 
   @Input() beer?: Beer;
 
-  viewMore(){
+  viewMore() {
     this.beersService.getBeer(this.beer?.id !== undefined ? this.beer?.id : 0).subscribe(value => {
       this.beersService.selectedBeer = value;
       const dialogRef = this.dialog.open(BeerDetailsComponent);
+
+      dialogRef.afterClosed().subscribe({
+        error: err => console.error(err)
+      });
+
     });
 
   }
