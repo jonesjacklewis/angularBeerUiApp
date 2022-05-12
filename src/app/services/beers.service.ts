@@ -32,19 +32,3 @@ export class BeersService {
   numberOfBeers: number = 0;
   response: any = null;
 }
-
-
-/*
-export interface Beer {
-  abv: number,
-  ingredients: {
-    hops: Hops[] | null | undefined,
-    malt: Malt[] | null | undefined,
-    yeast: string | null | undefined,
-  },
-  name: string,
-  volume: {
-    unit: string,
-    value: number
-  }
-}*/

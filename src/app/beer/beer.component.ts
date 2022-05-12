@@ -8,13 +8,7 @@ import { Beer } from '../interfaces/beer';
 })
 export class BeerComponent {
 
-  constructor() {
-  }
-
   @Input() beer?: Beer;
 
-  log(msg: any){
-    console.log(msg);
-  }
 
 }
