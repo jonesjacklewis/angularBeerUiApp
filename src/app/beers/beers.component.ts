@@ -30,21 +30,21 @@ export class BeersComponent implements OnInit {
   term?: string;
   disablePagination = false;
 
-  search(){
-    if(this.term != null && this.term != undefined && this.term.length > 0){
-      this.beers =  this.beersService.searchBeers(this.term);
+  search() {
+    if (this.term != null && this.term != undefined && this.term.length > 0) {
+      this.beers = this.beersService.searchBeers(this.term);
       this.beers.subscribe(next => this.beersList = next);
       this.disablePagination = true;
     }
   }
 
-  setCurrentPage(event?:PageEvent){
+  setCurrentPage(event?: PageEvent) {
     this.currentPage = (event?.pageIndex || 0) + 1;
-    this.beers =  this.beersService.getBeers(this.currentPage);
+    this.beers = this.beersService.getBeers(this.currentPage);
     this.beers.subscribe(next => this.beersList = next);
   }
 
-  clear(){
+  clear() {
     window.location.reload();
   }
 
