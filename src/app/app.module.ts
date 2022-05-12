@@ -9,11 +9,16 @@ import { BeersComponent } from './beers/beers.component';
 import { BeerComponent } from './beer/beer.component';
 import {MatCardModule} from '@angular/material/card';
 import {MatDividerModule} from '@angular/material/divider';
+import {MatFormFieldModule} from '@angular/material/form-field';
+import {MatIconModule} from '@angular/material/icon';
+import {MatInputModule} from '@angular/material/input';
+import { FormsModule } from '@angular/forms';
+
 @NgModule({
   declarations: [
     AppComponent,
     BeersComponent,
-    BeerComponent
+    BeerComponent,
   ],
   imports: [
     BrowserModule,
@@ -21,7 +26,11 @@ import {MatDividerModule} from '@angular/material/divider';
     BrowserAnimationsModule,
     MatPaginatorModule,
     MatCardModule,
-    MatDividerModule
+    MatDividerModule,
+    MatFormFieldModule,
+    MatIconModule,
+    MatInputModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

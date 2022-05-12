@@ -1,5 +1,19 @@
+<div class="search">
+  <mat-form-field>
+    <span matPrefix> </span>
+    <input type="text" matInput placeholder="Search" name="search" [(ngModel)]="term">
+    <button matSuffix mat-button (click)="search()">
+      <mat-icon>search</mat-icon>
+    </button>
+  </mat-form-field>
+
+  <button matSuffix mat-button (click)="clear()" *ngIf="disablePagination">
+    <mat-icon>clear</mat-icon>
+  </button>
+</div>
+
 <div class="beers">
-  <mat-paginator #paginator [length]="20" [pageSize]="1" [pageSizeOptions]="[1]" aria-label="Select page" (page)="setCurrentPage($event)">
+  <mat-paginator #paginator [length]="20" [pageSize]="1" [pageSizeOptions]="[1]" aria-label="Select page" (page)="setCurrentPage($event)" [disabled]="disablePagination">
   </mat-paginator>
 
   <section class="grid">
