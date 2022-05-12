@@ -5,6 +5,7 @@
 ## Usage
 
 - Watch a demo of the application [here](https://youtu.be/_HDpgq84WWA)
+- Access the App [here](https://angular-beer-ui-app.vercel.app/)
 
 ## Usage
 
