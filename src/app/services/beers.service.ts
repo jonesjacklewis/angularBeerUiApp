@@ -13,7 +13,10 @@ export class BeersService {
     return from(fetch(`https://api.punkapi.com/v2/beers?page=${pageNumber}&per_page=15`).then(res => res.json()).then(res => {return res})).pipe(map(item => this.createBeer(item)));
   }
 
+  searchBeers(searchTerm: string){
+    return from(fetch(`https://api.punkapi.com/v2/beers?page=1&per_page=15&beer_name=${searchTerm}`).then(res => res.json()).then(res => {return res})).pipe(map(item => this.createBeer(item)));
 
+  }
 
   createBeer(list: any): Beer[]{
     const beers = [];
@@ -28,7 +31,4 @@ export class BeersService {
     return beers;
   }
 
-  baseUrl: string = "https://api.punkapi.com/v2/beers";
-  numberOfBeers: number = 0;
-  response: any = null;
 }
