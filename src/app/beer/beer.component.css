@@ -17,3 +17,13 @@ mat-card{
   background-position: center;
   background-repeat: no-repeat;
 }
+
+
+mat-card-subtitle{
+  color: #fff;
+}
+
+mat-card-subtitle:hover{
+  font-weight: bold;
+  cursor: pointer;
+}
