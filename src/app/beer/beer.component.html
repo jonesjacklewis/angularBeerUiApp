@@ -1,0 +1,41 @@
+<mat-card>
+  <mat-card-header>
+    <mat-card-title>{{beer?.name}}</mat-card-title>
+  </mat-card-header>
+  <mat-divider></mat-divider>
+  <mat-card-content>
+    <p><span>Volume:</span> {{beer?.volume?.value}} {{beer?.volume?.unit}} </p>
+    <p><span>ABV: </span> {{beer?.abv}}</p>
+    <mat-divider></mat-divider>
+    <div class="hops" *ngIf="beer?.ingredients?.hops">
+      <h3>Hops</h3>
+      <ul>
+        <li *ngFor="let hop of beer?.ingredients?.hops">
+          <ul>
+            <h4>{{hop.name}}</h4>
+            <li>Add: {{hop.add}}</li>
+            <li>Amount: {{hop.amount.value}} {{hop.amount.unit}}</li>
+            <li>Attribute: {{hop.attribute}}</li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+    <mat-divider></mat-divider>
+    <div class="malt" *ngIf="beer?.ingredients?.malt">
+      <h3>Malt</h3>
+      <ul>
+        <li *ngFor="let m of beer?.ingredients?.malt">
+          <h4>{{m.name}}</h4>
+          <p>{{m.amount.value}} {{m.amount.unit}}</p>
+        </li>
+      </ul>
+    </div>
+    <mat-divider></mat-divider>
+    <div class="yeast" *ngIf="beer?.ingredients?.yeast">
+      <h3>Yeast</h3>
+      <p>{{beer?.ingredients?.yeast}}</p>
+    </div>
+  </mat-card-content>
+
+
+</mat-card>

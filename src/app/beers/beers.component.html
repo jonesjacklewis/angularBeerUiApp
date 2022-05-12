@@ -1,0 +1,9 @@
+<div class="beers">
+  <mat-paginator #paginator [length]="20" [pageSize]="1" [pageSizeOptions]="[1]" aria-label="Select page" (page)="setCurrentPage($event)">
+  </mat-paginator>
+
+  <section class="grid">
+    <app-beer *ngFor="let beer of beersList" [beer]="beer"></app-beer>
+  </section>
+
+</div>
