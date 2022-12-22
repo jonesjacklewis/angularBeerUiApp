@@ -1,6 +1,7 @@
 # Beer UI App
 
 - This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 13.2.3.
+- This project was created as part of an interview take home task.
 
 ## Usage
 
